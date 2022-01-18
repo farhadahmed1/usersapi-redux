@@ -1,22 +1,11 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-
-import { getUsers } from './redux/slice/usersSlice';
-
+import Users from './components/Home/Users/Users';
 
 function App() {
-  const dispatch = useDispatch();
-  const { users } = useSelector((state) => state.users);
 
-  useEffect(() => {
-    dispatch(getUsers());
-  }, []);
-
-  console.log(users);
   return (
     <div className="App">
-      <h2> Hello All Users {users.length}</h2>
+      <Users></Users>
     </div>
   );
 }
